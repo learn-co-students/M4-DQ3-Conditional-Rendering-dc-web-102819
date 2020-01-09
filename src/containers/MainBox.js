@@ -17,7 +17,6 @@ class MainBox extends React.Component {
     })
   }
 
-
   render() {
     let result
 
@@ -35,7 +34,7 @@ class MainBox extends React.Component {
         result = < Pokemon />
         break
       default:
-        result = "Hi, I'm a Div"
+        result = "Something went wrong. Please debug me."
     }
 
     const detailsToDisplay = <div>{result}</div>
