@@ -12,22 +12,29 @@ const MenuBar = (props) => {
   this component be made aware of what is currently the active menu item?
 
   */
+  function setClassNames(id) {
+    if (props.activeMenu === id) {
+      return "item active"
+    } else {
+      return "item"
+    }
+  }
 
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
+      <a className={setClassNames("profile")} id="profile" onClick={props.setActiveMenuItem}>
         <i className="user large icon" id="profile"/>
       </a>
 
-      <a className="item" id="photo">
+      <a className={setClassNames("photo")} id="photo" onClick={props.setActiveMenuItem}>
         <i className="photo large icon" id="photo"/>
       </a>
 
-      <a className="item" id="cocktail">
+      <a className={setClassNames("cocktail")} id="cocktail" onClick={props.setActiveMenuItem}>
         <i className="cocktail large icon" id="cocktail"/>
       </a>
 
-      <a className="item" id="pokemon"> 
+      <a className={setClassNames("pokemon")} id="pokemon" onClick={props.setActiveMenuItem} >
         <i className=" themeisle large icon" id="pokemon"/>
       </a>
     </div>
