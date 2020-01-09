@@ -1,7 +1,31 @@
 import React from 'react'
 
-const MenuBar = (props) => {
 
+class MenuBar extends React.Component {
+  
+  render() {
+    // console.log(this.props)
+    return (
+      <div className="ui four item menu">
+        <a className="item active" id="profile" onClick={this.props.changeDisplayedCard}>
+          <i className="user large icon" id="profile"/>
+        </a>
+
+        <a className="item" id="photo" onClick={this.props.changeDisplayedCard}>
+          <i className="photo large icon" id="photo"/>
+        </a>
+
+        <a className="item" id="cocktail" onClick={this.props.changeDisplayedCard}>
+          <i className="cocktail large icon" id="cocktail"/>
+        </a>
+
+        <a className="item" id="pokemon" onClick={this.props.changeDisplayedCard}> 
+          <i className=" themeisle large icon" id="pokemon"/>
+        </a>
+      </div>
+  )
+  }
+}
   /*
 
   The 'a' tags below are the menu items. Think about the way a menu 
@@ -12,27 +36,4 @@ const MenuBar = (props) => {
   this component be made aware of what is currently the active menu item?
 
   */
-
-  return (
-    <div className="ui four item menu">
-      <a className="item active" id="profile">
-        <i className="user large icon" id="profile"/>
-      </a>
-
-      <a className="item" id="photo">
-        <i className="photo large icon" id="photo"/>
-      </a>
-
-      <a className="item" id="cocktail">
-        <i className="cocktail large icon" id="cocktail"/>
-      </a>
-
-      <a className="item" id="pokemon"> 
-        <i className=" themeisle large icon" id="pokemon"/>
-      </a>
-    </div>
-  )
-
-}
-
 export default MenuBar

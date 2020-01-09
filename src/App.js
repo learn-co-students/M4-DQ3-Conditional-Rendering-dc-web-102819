@@ -3,7 +3,12 @@ import {Grid, Segment} from 'semantic-ui-react';
 import './App.css';
 import MainBox from './containers/MainBox.js'
 
+
 class App extends Component {
+ 
+  
+
+
   render() {
     return (
       <Grid centered column={1}>
@@ -12,9 +17,9 @@ class App extends Component {
       <Grid.Row></Grid.Row>
         <Grid.Row >
           <Grid.Column width={10}>
-            <Segment>
+          <Segment>
               <MainBox />
-            </Segment>
+          </Segment>
           </Grid.Column>
         </Grid.Row>
       </Grid>
