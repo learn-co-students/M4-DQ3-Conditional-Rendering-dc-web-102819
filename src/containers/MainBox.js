@@ -1,53 +1,49 @@
-import React from 'react'
-import MenuBar from '../components/MenuBar.js'
-import { Profile, Photos, Cocktails, Pokemon} from '../components/Pages.js'
+import React from "react";
+import MenuBar from "../components/MenuBar.js";
+import { Profile, Photos, Cocktails, Pokemon } from "../components/Pages.js";
 
 class MainBox extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      menuSelection: 'profile'
-    }
-  }
+  state = {
+    selected: "profile",
+  };
 
-  changeState = (e) => {
-    // debugger
+  changeSelected = (selected) => {
     this.setState({
-      menuSelection: e.currentTarget.id
-    })
-  }
-
+      selected: selected,
+    });
+  };
 
   render() {
-    let result
+    let details;
 
-    switch (this.state.menuSelection) {
-      case 'profile':
-        result = < Profile />
-        break
-      case 'photo':
-        result = < Photos />
-        break
-      case 'cocktail':
-        result = < Cocktails />
-        break
-      case 'pokemon':
-        result = < Pokemon />
-        break
+    switch (this.state.selected) {
+      case "profile":
+        details = <Profile />;
+        break;
+      case "photo":
+        details = <Photos />;
+        break;
+      case "cocktail":
+        details = <Cocktails />;
+        break;
+      case "pokemon":
+        details = <Pokemon />;
+        break;
       default:
-        result = "Hi, I'm a Div"
+        details = null;
+        break;
     }
-
-    const detailsToDisplay = <div>{result}</div>
 
     return (
       <div>
-        <MenuBar changeState={this.changeState}/>
-        {detailsToDisplay}
+        <MenuBar
+          changeSelected={this.changeSelected}
+          selected={this.state.selected}
+        />
+        {details}
       </div>
-    )
+    );
   }
-
 }
 
-export default MainBox
+export default MainBox;
