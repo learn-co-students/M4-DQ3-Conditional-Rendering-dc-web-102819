@@ -1,5 +1,7 @@
 import React from "react";
 
+//  Menubar is a function component
+
 const MenuBar = ({ changeSelected, selected }) => {
   const handleClick = (event) => {
     changeSelected(event.target.id);

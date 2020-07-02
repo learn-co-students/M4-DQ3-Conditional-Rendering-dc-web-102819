@@ -2,6 +2,7 @@ import React from "react";
 import MenuBar from "../components/MenuBar.js";
 import { Profile, Photos, Cocktails, Pokemon } from "../components/Pages.js";
 
+//  Mainbox class component
 class MainBox extends React.Component {
   state = {
     selected: "profile",
